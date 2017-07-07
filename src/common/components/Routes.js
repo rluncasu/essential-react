@@ -6,11 +6,13 @@ import LoginPage from '../../pages/login/page';
 import HomePage from '../../pages/home/page';
 
 
-export default (
+export const routes  = (
   <Route path="/" component={App}>
     <IndexRoute component={LoginPage} />
     <Route path="/home" component={HomePage} />
     <Route path="/dashboard" component={HomePage} />
     <Route path="/about" component={HomePage} />
   </Route>
-);
+)
+
+export default routes;

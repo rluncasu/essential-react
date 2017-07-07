@@ -37,9 +37,14 @@ module.exports = {
 
         historyApiFallback: true,
     },
+    // module: {
+    //     rules: [
+    //   { test: /\.jsx?$/, loaders: ["babel-loader"], exclude: /node_modules/ },
+    //     ]
+    // },
     module: {
-        rules: [
-      { test: /\.jsx?$/, loaders: ["babel-loader"], exclude: /node_modules/ },
+        loaders: [
+            { test: /\.jsx?$/, loader: ["babel-loader"], exclude: /node_modules/ }
         ]
     },
     plugins: [
@@ -57,9 +62,9 @@ module.exports = {
             minChunks: 2,
         }),
         new webpack.DefinePlugin({
-            DEVELOPMENT: "true",
-            PRODUCTION: "false",
-            NODE_ENV: JSON.stringify('development'),
+            "process.env.DEVELOPMENT": "true",
+            "process.env.PRODUCTION": "false",
+            "process.env.NODE_ENV": JSON.stringify('testingshits'),
         }),
         new HtmlWebpackPlugin({
           template: "./index.html"
